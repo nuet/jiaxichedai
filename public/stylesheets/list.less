@@ -1,0 +1,136 @@
+@charset "utf-8";
+@import "base";
+//公共部分
+.aboutus-introduce,.aboutus-team,.accordion{
+  .content{
+    width: 800px;
+    margin:0 auto;
+  }
+}
+//关于我们
+.aboutus-introduce{
+  @h:640px;
+  height:@h;
+  background: url("../images/aboutus/aboutus_bg.png") no-repeat center;
+  color:#fff;
+  h4{
+    font-size:48px;
+    text-align: center;
+    line-height: 48px;
+    padding-top:150px;
+    padding-bottom:40px;
+  }
+  p{
+    .font16;
+    line-height: 24px;
+    margin-bottom:30px;
+  }
+}
+.aboutus-team{
+  background: url("../images/aboutus/team_bg.png") repeat-x;
+  padding-bottom:80px;
+  dd{
+    i{
+      font-style: normal;
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      padding-bottom:15px;
+    }
+  }
+  .font16{
+    line-height: 30px;
+    padding-top:35px;
+    text-align: center;
+  }
+  .pic{
+    padding-top:50px;
+  }
+
+  .aboutus-avatar{
+    @w:320px;
+    width: @w;
+    margin:0 auto;
+    .product-title{
+      padding-top:24px;
+      .font24;
+      font-weight:bold;
+      span{
+        height:4px;
+        width: 32px;
+        margin:12px auto;
+      }
+    }
+  }
+}
+.aboutus-attend{
+  @h:160px;
+  height:@h;
+  background: url("../images/aboutus/zhaopin_bg.png") no-repeat center;
+  text-align: center;
+  strong{
+    .font30;
+    font-weight:normal;
+    display: block;
+    padding-top:44px;
+    padding-bottom:20px;
+    line-height:30px;
+    color: @color-red;
+  }
+  a{
+    color: @color-gray;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  p{
+    .font16;
+    color: @color-gray;
+  }
+}
+
+.accordion {
+  padding-top: 28px;
+  padding-bottom: 35px;
+  dl {
+    background: #f7f7f7;
+    padding: 0 20px;
+    margin-bottom:10px;
+    dt {
+      @h:44px;
+      .txt-ver(@h);
+
+      span{
+        .font18;
+      }
+      a{
+        display: inline-block;
+        float: right;
+        font-size:22px;
+        color: #e70022;
+      }
+    }
+    dd {
+      padding:15px 10px;
+      padding-bottom:30px;
+      border-top:1px solid #dcdcdc;
+      display: none;
+        h5{
+          font-weight:bold;
+          font-size:14px;
+        }
+      p,ul{
+        padding-left:15px;
+        padding-bottom:8px;
+        font-size:12px;
+        line-height: 22px;
+      }
+
+    }
+    &.active{
+      dt a{
+        font-size:38px;
+      }
+    }
+   }
+}

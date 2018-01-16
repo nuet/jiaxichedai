@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "less/css3";
+@import "less/bl";
+@import "less/z";
+//重置样式
+.reset();
+.themes();
+//头部和底部
+#header{
+  .pos(f);
+  width: 100%;
+  z-index: 666;
+  &.bg{
+    .rgba(0,0,0,0.2);
+   // border-bottom:1px solid @color-red;
+  }
+  .logo{
+    @w:218px;
+    @h:66px;
+    display: inline-block;
+    width: @w;
+    height:@h;
+    background:url("../images/logo.png") no-repeat center;
+    overflow: hidden;
+    text-indent: -2000px;
+    margin-top:12px;
+  }
+  nav{
+    padding-top:20px;
+    a{
+      @h:30px;
+      height:@h;
+      line-height: 30px;
+      display: inline-block;
+      padding:0 15px;
+      margin:0 10px;
+      .border-radius(4px);
+      &:hover{
+        color: @color-red;
+      }
+      &.active{
+        color: #fff;
+        background: #e60115;
+        .pos(r);
+        .ico{
+          @w:25px;
+          @h:17px;
+          width: @w;
+          height:@h;
+          .pos(a);
+          display: inline-block;
+          background: url("../images/fire.png");
+          left:-@w;
+          top:0;
+        }
+      }
+
+    }
+  }
+}
+#footer{
+  @h:75px;
+  @color-gray:#8a8a8a;
+  background: @footer-bg;
+  color: @color-gray;
+  padding:25px 0;
+  .links{
+    margin-bottom:50px;
+    a{
+      color: @color-gray;
+    }
+    span{
+      display:inline-block;
+      padding:0 8px;
+      position: relative;
+      top:-1px;
+    }
+  }
+  .hot-line{
+    display: inline-block;
+    float: right;
+  }
+  .copyright{
+    .font12;
+    color: #575757;
+  }
+  .phone{
+    .font30;
+    line-height:56px;
+  }
+}

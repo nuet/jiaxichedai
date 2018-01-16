@@ -1,0 +1,155 @@
+extends layout
+block content
+    //轮播图
+    section.carousel_wrapper
+        ul.carousel-slide
+            li
+                a(href="javascript:;")
+                    img(src="../images/index/banner01.jpg")
+            li
+                a(href="javascript:;")
+                    img(src="../images/index/banner02.jpg")
+
+        nav.carousel-pagination
+            a(href="javascript:;").active
+            a(href="javascript:;")
+
+    //贷款步骤
+    section.border-bottom
+        .container
+            .row
+                .col-75
+                    dl.porduct-steps
+                        dt.product-title 贷款步骤
+                            span &nbsp;
+                        dd.text-center
+                            img(src="/images/index/steps.jpg" width="790" height="144" alt="贷款步骤")
+                .col-25
+                    dl.dl-form
+                        dt 申请贷款
+                        dd
+                            form.form-horizontal
+                                ul.list-unstyled
+                                    li.form-group
+                                        label.col-30.control-label 贷款申请
+                                        .col-70
+                                            .input-group
+                                                input(type="text" placeholder="整数数字").form-control
+                                                span.input-group-addon 万元
+                                    li.form-group
+                                        label.col-30.control-label 贷款期限
+                                        .col-70
+                                            .input-group
+                                                input(type="text" placeholder="整数数字").form-control
+                                                span.input-group-addon  个月
+                                    li.form-group
+                                        label.col-30.control-label 贷款说明
+                                        .col-70
+                                            input(type="text" placeholder="贷款用途（20字以内）").form-control
+                                    li.form-group
+                                        label.col-30.control-label 联系手机
+                                        .col-70
+                                            input(type="text").form-control#inputTel
+                                    li.form-group
+                                        label.col-30.control-label 验证码
+                                        .col-70
+                                            .input-group
+                                                input(type="text").form-control
+                                                a.input-group-addon(href="javascript:;") 验证码
+                                    li.form-group
+                                        label.col-30 &emsp;
+                                        .col-70
+                                            button(type="submit").btn.btn-primary 立即提交
+
+
+
+    //我的产品
+    section.bg-gray.border-bottom
+        .container
+            dl.dl-product
+                dt.product-title 我们的产品
+                    span &nbsp;
+                dd
+                    ul
+                        li
+                            .item-box
+                                h5 库融贷
+                                div.content
+                                    ol
+                                        li 产品简介：新车库存融资产品，服务于全国新车车商
+                                        li 适用客户：4S店、新车经销商
+                                        li 产品周期：3个月
+                                        li 产品利息：1% - 1.5%
+                                        li 放款时间：当天
+                        li
+                            .item-box
+                                h5 采购贷
+                                div.content
+                                    ol
+                                        li 产品简介：新车采购垫资产品， 服务于全国新车车辆，解决您在采购环节资金不足的困扰。
+                                        li 适用客户：4S店、新车经销商、个人。
+                                        li 产品周期：3个月
+                                        li 产品利息：0.04%-0.05%
+                                        li 放款时间：当天
+                        li
+                            .item-box
+                                h5 车抵贷
+                                div.content
+                                    ol
+                                        li 产品简介：车辆抵押贷款，解决您资金周转的困扰。
+                                        li 适用客户：个人
+                                        li 产品周期：1-6个月
+                                        li 产品利息：1.5%
+                                        li 放款时间：当天
+                        li.last
+                            .item-box
+                                h5 分期购
+                                div.content
+                                    ol
+                                        li 产品简介：零首付，银行信用卡分期产品
+                                        li 适用客户：个人
+                                        li 产品周期：3年
+                                        li 产品利息：16%
+                                        li 放款时间：当天
+
+    //我们的优势
+    section.border-bottom
+        .container
+            dl.dl-advantage
+                dt.product-title 我们的优势
+                    span &nbsp;
+                dd
+                    ul.row.text-center
+                        -
+                             advantage=[
+                                {'img':'/images/index/wide.png','title':'业务覆盖广','des':'全国已覆盖50多个领域'},
+                                {'img':'/images/index/high.png','title':'贷款额度高','des':'贷款额度最高可达5000万元'},
+                                {'img':'/images/index/fast.png','title':'放款速度快','des':'极速放款时间2个小时到账'},
+                                {'img':'/images/index/more.png','title':'产品各类多','des':'产品多样化满足不同客户需求'},
+                             ];
+
+                        each item in advantage
+                            li.col-25
+                                img(src=item.img width="60" height="60")
+                                h5 #{item.title}
+                                p #{item.des}
+    //官方合作
+    section.bg-gray
+        .container
+            dl.dl-partners
+                dt.product-title 官方合作
+                    span &nbsp;
+                dd
+                    -
+                        partners=[
+                                {'img':'/images/partners/partner01.jpg','alt':'易通贷'},
+                                {'img':'/images/partners/partner02.jpg','alt':'龙江银行'},
+                                {'img':'/images/partners/partner03.jpg','alt':'南平农村商业银行'},
+                                {'img':'/images/partners/partner04.jpg','alt':'京东'},
+                                {'img':'/images/partners/partner05.jpg','alt':'精真估'},
+                                {'img':'/images/partners/partner06.jpg','alt':'车300'},
+                                {'img':'/images/partners/partner07.jpg','alt':'长久集团'}
+                            ];
+                    each item ,i in partners
+                        a(href="javascript:;" style=(i+1)%5?'':'margin-right:0;')
+                            img(src=item.img width="214" height="78" alt=item.alt)

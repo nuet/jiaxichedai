@@ -1,0 +1,188 @@
+@charset "utf-8";
+@import "base";
+//公共部分
+.product-title{
+  .font30;
+  margin-top:40px;
+  margin-bottom:10px;
+  text-align: center;
+  line-height:30px;
+  span{
+    @w:36px;
+    display:block;
+    width: @w;
+    height:2px;
+    background-color: #ca0f20;
+    margin: 15px auto;
+  }
+}
+//轮播图
+.carousel_wrapper { min-width:1240px; height:410px; position:relative;overflow:hidden; }
+.carousel-slide { position:absolute; left:0; }
+.carousel-slide li { float:left; }
+.carousel-slide li img { position:relative; left:0; }
+.carousel-pagination { position:absolute; width:100%; text-align:center; bottom:25px; }
+.carousel-pagination a { cursor:pointer; display:inline-block; width:12px; height:12px; background:#f0f0f0;
+  margin:0 8px;
+  .border-radius(10px);
+  &:hover{
+    background: #fff;
+  }
+}
+//.carousel-pagination a:hover { background:#f1f2f4; }
+.carousel-pagination a.active { background:@bg-red; }
+//贷款步骤
+.porduct-steps{
+  padding-top:10px;
+  dd{
+    padding-top:35px;
+  }
+}
+//申请贷款
+.dl-form{
+  padding-top:42px;
+  margin-bottom:45px;
+  dt{
+    @h:56px;
+    .txt-ver(@h);
+    text-align:center;
+    color: #fff;
+    .font17;
+    background:url("../images/index/title.jpg") no-repeat center;
+    text-indent: -4000px;
+  }
+  dd{
+    background: @bg-gray;
+    border: 1px solid @border-color;
+    padding:24px 20px;
+    padding-bottom:18px;
+  }
+  .btn{
+    margin-top:8px;
+  }
+}
+//我们的产品
+.dl-product{
+  dd{
+    @h:564px;
+    height:564px;
+    padding-top:36px;
+    background: url("../images/index/pr_bg.jpg") no-repeat top;
+    padding-bottom:20px;
+    h5{
+      //font-size:30px;
+      font-size:24px;
+      text-align: center;
+      line-height:56px;
+      padding-bottom:15px;
+      padding-top:30px;
+    }
+    ul>li{
+      @w:301px;
+      @h:400px;
+      width: @w;
+      height:@h;
+      color: #fff;
+      float: left;
+      margin-right:12px;
+      overflow: hidden;
+      &.last{
+        margin-right:0;
+      }
+      .item-box{
+        @w:110px;
+        @h:110px;
+        overflow: hidden;
+        .transition(.4s);
+        .border-radius(@h/2);
+        margin:0 auto;
+        margin-top: 144px;
+        width: @w;
+        height:@h;
+        .content{
+          display: none;
+        }
+        .background-rgba(230,2,20,.7);
+      }
+      &:hover,&:active,&.active{
+        .item-box{
+          padding:40px;
+          margin-top: 0px;
+          .border-radius(0);
+          @w:301px-80px;
+          @h:400px;
+          width: @w;
+          height:@h;
+          h5{
+            padding-top:0;
+            font-size:30px;
+          }
+          .content{
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}
+//我们的优势
+.dl-advantage{
+  dd{
+    padding-top:50px;
+    padding-bottom:80px;
+    li{
+      &:hover{
+        img{
+          .rotateY(180deg);
+        }
+      }
+    }
+      img{
+        .transition(.7s);
+      }
+
+    h5{
+      padding-top:40px;
+      padding-bottom:20px;
+      .font24;
+      line-height: 24px;
+      font-weight:normal;
+    }
+    p{
+      color: @color-gray;
+    }
+  }
+}
+// 官方合作
+.dl-partners{
+  @h:360px;
+  height:@h;
+  background: url("../images/index/partner_bg.jpg") no-repeat 95% bottom;
+  dd{
+    padding-top:25px;
+    a{
+      display: inline-block;
+      margin-right:40px;
+      border: 1px solid #d8d9dd;
+      margin-bottom:20px;
+    }
+  }
+}
+//发送手机验证码
+.input-group-addon#sendMsg{
+  background: #5e7dbe;
+  color: #fff;
+  font-size:15px;
+  border-color:#5e7dbe;
+  &:hover{
+    background: #668ad1;
+    border-color: #668ad1;
+  }
+  &.active{
+    background: #dcdcdc;
+    border-color: #aaa;
+    color: @color-gray;
+    cursor: pointer;
+  }
+}
